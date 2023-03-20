@@ -55,7 +55,7 @@ The following Cargo features are supported:
 * Strengthening:
     <!-- * `CglCliqueStrengthening` to provide [CglCliqueStrengthening] cut generator; -->
     * `CglDuplicateRow` to provide [CglDuplicateRow] cut generator;
-    * `CglPreprocess` to provide [CglPreprocess] cut generator;
+    * `CglPreProcess` to provide [CglPreProcess] cut generator;
     * `CglProbing` to provide [CglProbing] cut generator;
     * `CglSimpleRounding` to provide [CglSimpleRounding] cut generator;
 
@@ -173,6 +173,6 @@ will be licensed according to the terms given in [LICENSE](license-url).
 [CglResidualCapacity]: https://github.com/coin-or/Cgl/wiki/CglResidualCapacity
 <!-- [CglCliqueStrengthening]: https://github.com/coin-or/Cgl/wiki/CglCliqueStrengthening -->
 [CglDuplicateRow]: https://github.com/coin-or/Cgl/wiki/CglDuplicateRow
-[CglPreprocess]: https://github.com/coin-or/Cgl/wiki/CglPreprocess
+[CglPreProcess]: https://github.com/coin-or/Cgl/wiki/CglPreProcess
 [CglProbing]: https://github.com/coin-or/Cgl/wiki/CglProbing
 [CglSimpleRounding]: https://github.com/coin-or/Cgl/wiki/CglSimpleRounding

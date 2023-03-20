@@ -98,11 +98,11 @@ fn build_lib_and_link() {
         lib_sources.push(format!("{}/CglMixedIntegerRounding2/CglMixedIntegerRounding2.cpp", src_dir));
         includes_dir.push(format!("{}/CglMixedIntegerRounding2/", src_dir));
     }
-    if cfg!(feature = "OddHole") {
+    if cfg!(feature = "CglOddHole") {
         lib_sources.push(format!("{}/CglOddHole/CglOddHole.cpp", src_dir));
         includes_dir.push(format!("{}/CglOddHole/", src_dir));
     }
-    if cfg!(feature = "OddWheel") {
+    if cfg!(feature = "CglOddWheel") {
         todo!("OddWheel");
     }
     if cfg!(feature = "CglPreProcess") {

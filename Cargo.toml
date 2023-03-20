@@ -20,11 +20,10 @@ exclude = [
 ]
 
 [features]
-default = []
-
+default = ["default_cuts", "with_clp"]
 with_clp = ["clp-src"]
 
-default_cuts = ["CglAllDifferent","CglClique", "CglKnapsackCover", "CglOddHole", "CglZeroHalf", "CglFlowCover", "CglGomory", "CglGMI", "CglRedSplit", "CglRedSplit2", "CglLiftAndProject", "CglLandP", "CglMixedIntegerRounding", "CglMixedIntegerRounding2", "CglTwomir", "CglResidualCapacity", "CglDuplicateRow", "CglPreprocess", "CglProbing", "CglSimpleRounding"]
+default_cuts = ["CglAllDifferent","CglClique", "CglKnapsackCover", "CglOddHole", "CglZeroHalf", "CglFlowCover", "CglGomory", "CglGMI", "CglRedSplit", "CglRedSplit2", "CglLiftAndProject", "CglLandP", "CglMixedIntegerRounding", "CglMixedIntegerRounding2", "CglTwomir", "CglResidualCapacity", "CglDuplicateRow", "CglPreProcess", "CglProbing", "CglSimpleRounding"]
 
 # Combinatorial cuts:
 
@@ -58,7 +57,7 @@ CglResidualCapacity = []
 # Strengthening:
 # CglCliqueStrengthening = [] //for next version
 CglDuplicateRow = []
-CglPreprocess = []
+CglPreProcess = []
 CglProbing = []
 CglSimpleRounding = []
 
