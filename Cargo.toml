@@ -1,0 +1,75 @@
+[package]
+name = "cgl-src"
+version = "0.1.0+0.60.6"
+edition = "2021"
+build = "build.rs"
+links = "Cgl"
+license = "Apache-2.0"
+description = "The low-level bindings to the COIN-OR Cgl library."
+repository = "https://github.com/Maroon502/cgl-src.git"
+keywords = ["coin-or", "Cgl", "Cgl-src"]
+readme = "README.md"
+authors = [
+    "Maroon502<maroon502@outlook.com>"
+]
+exclude = [
+    "Cgl/**/*",
+    "!Cgl/Cgl/src/**/*",
+    "!**/LICENSE",
+    "!**/AUTHORS",
+]
+
+[features]
+default = []
+
+with_clp = ["clp-src"]
+
+default_cuts = ["CglAllDifferent","CglClique", "CglKnapsackCover", "CglOddHole", "CglZeroHalf", "CglFlowCover", "CglGomory", "CglGMI", "CglRedSplit", "CglRedSplit2", "CglLiftAndProject", "CglLandP", "CglMixedIntegerRounding", "CglMixedIntegerRounding2", "CglTwomir", "CglResidualCapacity", "CglDuplicateRow", "CglPreprocess", "CglProbing", "CglSimpleRounding"]
+
+# Combinatorial cuts:
+
+CglAllDifferent = []
+# CglBKClique = [] //for next version
+CglClique = []
+CglKnapsackCover = []
+CglOddHole = []
+# CglOddWheel = [] //for next version
+CglZeroHalf = []
+
+# flow cover cuts:
+CglFlowCover = []
+
+# Gomory cuts and variants:
+CglGomory = ["with_clp"]
+CglGMI = []
+CglRedSplit = []
+CglRedSplit2 = []
+
+# Lift and project cuts:
+CglLiftAndProject = []
+CglLandP = ["CglGomory"]
+
+# Mixed integer rounding cuts and variants:
+CglMixedIntegerRounding = []
+CglMixedIntegerRounding2 = []
+CglTwomir = ["with_clp"]
+CglResidualCapacity = []
+
+# Strengthening:
+# CglCliqueStrengthening = [] //for next version
+CglDuplicateRow = []
+CglPreprocess = []
+CglProbing = []
+CglSimpleRounding = []
+
+
+
+[dependencies]
+coinutils-src = {git = "https://github.com/Maroon502/coinutils-src.git"}
+osi-src = {git = "https://github.com/Maroon502/osi-src.git"}
+clp-src = {git = "https://github.com/Maroon502/clp-src.git", optional = true}
+
+
+[build-dependencies]
+cc = "1.0"
+coin-build-tools = { git = "https://github.com/Maroon502/coin-build-tools.git" }
