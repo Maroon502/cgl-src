@@ -18,9 +18,8 @@ cgl-src = "0.1"
 
 The following Cargo features are supported:
 
-* `default` to `with_osi` feature;
+* `default` to `with_clp` and `default_cuts` feature;
 * `with_clp` to build with Clp support;
-
 * `default_cuts` to provide all the following cut generators;
 
 * Combinatorial cuts
