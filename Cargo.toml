@@ -1,11 +1,12 @@
 [package]
 name = "cgl-src"
-version = "0.1.0+0.60.6"
+version = "0.2.0+0.60.6"
 edition = "2021"
 build = "build.rs"
 links = "Cgl"
 license = "Apache-2.0"
 description = "The low-level bindings to the COIN-OR Cgl library."
+documentation = "https://docs.rs/cgl-src/"
 repository = "https://github.com/Maroon502/cgl-src.git"
 keywords = ["coin-or", "Cgl", "Cgl-src"]
 readme = "README.md"
@@ -64,11 +65,11 @@ CglSimpleRounding = []
 
 
 [dependencies]
-coinutils-src = {git = "https://github.com/Maroon502/coinutils-src.git"}
-osi-src = {git = "https://github.com/Maroon502/osi-src.git"}
-clp-src = {git = "https://github.com/Maroon502/clp-src.git", default-features = false, optional = true}
+coinutils-src = "0.2"
+osi-src = "0.2"
+clp-src = { version = "0.2", default-features = false, optional = true}
 
 
 [build-dependencies]
 cc = "1.0"
-coin-build-tools = { git = "https://github.com/Maroon502/coin-build-tools.git" }
+coin-build-tools = "0.2"
