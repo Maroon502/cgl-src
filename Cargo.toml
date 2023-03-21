@@ -21,7 +21,7 @@ exclude = [
 
 [features]
 default = ["default_cuts", "with_clp"]
-with_clp = ["clp-src"]
+with_clp = ["clp-src/osiclp"]
 
 default_cuts = ["CglAllDifferent","CglClique", "CglKnapsackCover", "CglOddHole", "CglZeroHalf", "CglFlowCover", "CglGomory", "CglGMI", "CglRedSplit", "CglRedSplit2", "CglLiftAndProject", "CglLandP", "CglMixedIntegerRounding", "CglMixedIntegerRounding2", "CglTwomir", "CglResidualCapacity", "CglDuplicateRow", "CglPreProcess", "CglProbing", "CglSimpleRounding"]
 
@@ -66,7 +66,7 @@ CglSimpleRounding = []
 [dependencies]
 coinutils-src = {git = "https://github.com/Maroon502/coinutils-src.git"}
 osi-src = {git = "https://github.com/Maroon502/osi-src.git"}
-clp-src = {git = "https://github.com/Maroon502/clp-src.git", optional = true}
+clp-src = {git = "https://github.com/Maroon502/clp-src.git", default-features = false, optional = true}
 
 
 [build-dependencies]
