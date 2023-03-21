@@ -1,20 +1,29 @@
 use std::env;
 use std::path::{Path, PathBuf};
 
-use coin_build_tools::{utils, link, coinbuilder};
+use coin_build_tools::{coinbuilder, link, utils};
 
 const LIB_NAME: &str = "Cgl";
 
 fn main() {
-    println!("cargo:rerun-if-changed={}_lib_sources.txt", LIB_NAME.to_ascii_lowercase());
-    println!("cargo:rerun-if-env-changed=CARGO_{}_STATIC", LIB_NAME.to_ascii_uppercase());
-    println!("cargo:rerun-if-env-changed=CARGO_{}_SYSTEM", LIB_NAME.to_ascii_uppercase());
+    println!(
+        "cargo:rerun-if-changed={}_lib_sources.txt",
+        LIB_NAME.to_ascii_lowercase()
+    );
+    println!(
+        "cargo:rerun-if-env-changed=CARGO_{}_STATIC",
+        LIB_NAME.to_ascii_uppercase()
+    );
+    println!(
+        "cargo:rerun-if-env-changed=CARGO_{}_SYSTEM",
+        LIB_NAME.to_ascii_uppercase()
+    );
 
     let want_system = utils::want_system(LIB_NAME);
 
     if want_system && link::link_lib_system_if_supported(LIB_NAME) {
         let coinflags = vec!["CGL".to_string()];
-        coinbuilder::print_metedata(Vec::new(), coinflags);     
+        coinbuilder::print_metedata(Vec::new(), coinflags);
         return;
     }
 
@@ -34,9 +43,7 @@ fn build_lib_and_link() {
             .display()
     );
 
-    let mut includes_dir = vec![
-        format!("{}", src_dir),
-    ];
+    let mut includes_dir = vec![format!("{}", src_dir)];
 
     let mut lib_sources = include_str!("cgl_lib_sources.txt")
         .trim()
@@ -91,15 +98,24 @@ fn build_lib_and_link() {
         includes_dir.push(format!("{}/CglLandP/", src_dir));
     }
     if cfg!(feature = "CglLiftAndProject") {
-        lib_sources.push(format!("{}/CglLiftAndProject/CglLiftAndProject.cpp", src_dir));
+        lib_sources.push(format!(
+            "{}/CglLiftAndProject/CglLiftAndProject.cpp",
+            src_dir
+        ));
         includes_dir.push(format!("{}/CglLiftAndProject/", src_dir));
     }
     if cfg!(feature = "CglMixedIntegerRounding") {
-        lib_sources.push(format!("{}/CglMixedIntegerRounding/CglMixedIntegerRounding.cpp", src_dir));
+        lib_sources.push(format!(
+            "{}/CglMixedIntegerRounding/CglMixedIntegerRounding.cpp",
+            src_dir
+        ));
         includes_dir.push(format!("{}/CglMixedIntegerRounding/", src_dir));
     }
     if cfg!(feature = "CglMixedIntegerRounding2") {
-        lib_sources.push(format!("{}/CglMixedIntegerRounding2/CglMixedIntegerRounding2.cpp", src_dir));
+        lib_sources.push(format!(
+            "{}/CglMixedIntegerRounding2/CglMixedIntegerRounding2.cpp",
+            src_dir
+        ));
         includes_dir.push(format!("{}/CglMixedIntegerRounding2/", src_dir));
     }
     if cfg!(feature = "CglOddHole") {
@@ -128,11 +144,17 @@ fn build_lib_and_link() {
         includes_dir.push(format!("{}/CglRedSplit2/", src_dir));
     }
     if cfg!(feature = "CglResidualCapacity") {
-        lib_sources.push(format!("{}/CglResidualCapacity/CglResidualCapacity.cpp", src_dir));
+        lib_sources.push(format!(
+            "{}/CglResidualCapacity/CglResidualCapacity.cpp",
+            src_dir
+        ));
         includes_dir.push(format!("{}/CglResidualCapacity/", src_dir));
     }
     if cfg!(feature = "CglSimpleRounding") {
-        lib_sources.push(format!("{}/CglSimpleRounding/CglSimpleRounding.cpp", src_dir));
+        lib_sources.push(format!(
+            "{}/CglSimpleRounding/CglSimpleRounding.cpp",
+            src_dir
+        ));
         includes_dir.push(format!("{}/CglSimpleRounding/", src_dir));
     }
     if cfg!(feature = "CglTwomir") {
