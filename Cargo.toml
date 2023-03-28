@@ -1,6 +1,6 @@
 [package]
 name = "cgl-src"
-version = "0.2.0+0.60.6"
+version = "0.2.2+0.60.6"
 edition = "2021"
 build = "build.rs"
 links = "Cgl"
