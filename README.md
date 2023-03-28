@@ -2,11 +2,13 @@
 
 [![Package][package-img]][package-url] [![Documentation][documentation-img]][documentation-url] [![License][license-img]][license-url]
 
-The package provides Low-level bindings to the [Cgl] library. [Cgl] build with [CoinUtils] ([CoinUtils-src]), [Osi] ([Clp-src]) and [Clp] ([Clp-src])(Optional) support.
+## description
 
-By this package, you don't need to worry about installing Cgl in the system, and it's a package for **all platforms**.
+cgl-src crate is a *-src crate. This links Cgl libraries to executable build by cargo, but does not provide Rust bindings. [Cgl] build with [CoinUtils] ([CoinUtils-src]), [Osi] ([Clp-src]) and [Clp] ([Clp-src])(Optional) support.
 
-The COIN-OR Cut Generation Library (Cgl) is a collection of cut generators that can be used with other COIN-OR packages that make use of cuts, such as, the mixed integer linear programming solvers [Cbc] ([Cbc-src]) or [BCP] ([BCP-src]). Cgl uses the [Osi] ([Osi-src]) to use or communicate with a solver, such as the linear programming solvers [Clp] [Clp-src]. It does not directly call a solver.
+By this package, you don't need to worry about installing Cgl in the system, and it can be built for **all platforms**.
+
+The COIN-OR Cut Generation Library (Cgl) is a collection of cut generators that can be used with other COIN-OR packages that make use of cuts, such as, the mixed integer linear programming solvers [Cbc] ([Cbc-src]). Cgl uses the [Osi] ([Osi-src]) to use or communicate with a solver, such as the linear programming solvers [Clp] [Clp-src]. It does not directly call a solver.
 
 ## Usage
 Just add the following to your `Cargo.toml`:
@@ -16,6 +18,12 @@ Just add the following to your `Cargo.toml`:
 cgl-src = "0.2"
 ```
 
+This package does not provide bindings. Please use [coincbc-sys], [coinclp-sys] to use Cbc, Clp, e.g.
+
+```toml
+[dependencies]
+coincbc-sys = { version = "0.2" }
+```
 ## Configuration
 
 The following Cargo features are supported:
@@ -143,7 +151,8 @@ will be licensed according to the terms given in [LICENSE](license-url).
 [Cgl-src]: https://github.com/Maroon502/cgl-src
 [Clp-src]: https://github.com/Maroon502/clp-src
 [Cbc-src]: https://github.com/Maroon502/cbc-src
-[BCP-src]: https://github.com/Maroon502/bcp-src
+[coincbc-sys]: https://github.com/Maroon502/coincbc-sys
+[coinclp-sys]: https://github.com/Maroon502/coinclp-sys
 
 [vcpkg]: https://github.com/Microsoft/vcpkg
 
