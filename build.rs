@@ -23,7 +23,7 @@ fn main() {
 
     if want_system && link::link_lib_system_if_supported(LIB_NAME) {
         let coinflags = vec!["CGL".to_string()];
-        coinbuilder::print_metedata(Vec::new(), coinflags);
+        coinbuilder::print_metadata(Vec::new(), coinflags);
         return;
     }
 
@@ -168,21 +168,21 @@ fn build_lib_and_link() {
         includes_dir.push(format!("{}/CglZeroHalf/", src_dir));
     }
 
-    let (include_other, coinflags_other) = coinbuilder::get_metedata_from("CoinUtils");
+    let (include_other, coinflags_other) = coinbuilder::get_metadata_from("CoinUtils");
     includes_dir.extend(include_other);
     coinflags.extend(coinflags_other);
 
-    let (include_other, coinflags_other) = coinbuilder::get_metedata_from("Osi");
+    let (include_other, coinflags_other) = coinbuilder::get_metadata_from("Osi");
     includes_dir.extend(include_other);
     coinflags.extend(coinflags_other);
 
     if cfg!(feature = "with_clp") {
-        let (include_other, coinflags_other) = coinbuilder::get_metedata_from("Clp");
+        let (include_other, coinflags_other) = coinbuilder::get_metadata_from("Clp");
         includes_dir.extend(include_other);
         coinflags.extend(coinflags_other);
     }
 
-    coinbuilder::print_metedata(includes_dir.clone(), coinflags.clone());
+    coinbuilder::print_metadata(includes_dir.clone(), coinflags.clone());
 
     let mut config = coinbuilder::init_builder();
     coinflags.iter().for_each(|flag| {
