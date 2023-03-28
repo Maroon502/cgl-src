@@ -62,6 +62,7 @@ fn build_lib_and_link() {
     }
     if cfg!(feature = "CglClique") {
         lib_sources.push(format!("{}/CglClique/CglClique.cpp", src_dir));
+        lib_sources.push(format!("{}/CglClique/CglCliqueHelper.cpp", src_dir));
         includes_dir.push(format!("{}/CglClique/", src_dir));
     }
     if cfg!(feature = "CglCliqueStrengthening") {
@@ -167,8 +168,6 @@ fn build_lib_and_link() {
         includes_dir.push(format!("{}/CglZeroHalf/", src_dir));
     }
 
-    coinbuilder::print_metedata(includes_dir.clone(), coinflags.clone());
-
     let (include_other, coinflags_other) = coinbuilder::get_metedata_from("CoinUtils");
     includes_dir.extend(include_other);
     coinflags.extend(coinflags_other);
@@ -182,6 +181,8 @@ fn build_lib_and_link() {
         includes_dir.extend(include_other);
         coinflags.extend(coinflags_other);
     }
+
+    coinbuilder::print_metedata(includes_dir.clone(), coinflags.clone());
 
     let mut config = coinbuilder::init_builder();
     coinflags.iter().for_each(|flag| {
