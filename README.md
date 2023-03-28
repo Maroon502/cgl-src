@@ -3,7 +3,9 @@
 [![Package][package-img]][package-url] [![Documentation][documentation-img]][documentation-url] [![License][license-img]][license-url]
 
 The package provides Low-level bindings to the [Cgl] library. [Cgl] build with [CoinUtils] ([CoinUtils-src]), [Osi] ([Clp-src]) and [Clp] ([Clp-src])(Optional) support.
-                                
+
+By this package, you don't need to worry about installing Cgl in the system, and it's a package for **all platforms**.
+
 The COIN-OR Cut Generation Library (Cgl) is a collection of cut generators that can be used with other COIN-OR packages that make use of cuts, such as, the mixed integer linear programming solvers [Cbc] ([Cbc-src]) or [BCP] ([BCP-src]). Cgl uses the [Osi] ([Osi-src]) to use or communicate with a solver, such as the linear programming solvers [Clp] [Clp-src]. It does not directly call a solver.
 
 ## Usage
@@ -11,7 +13,7 @@ Just add the following to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-cgl-src = "0.1"
+cgl-src = "0.2"
 ```
 
 ## Configuration
