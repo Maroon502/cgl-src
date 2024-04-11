@@ -22,7 +22,19 @@ fn main() {
     let want_system = utils::want_system(LIB_NAME);
 
     if want_system && link::link_lib_system_if_supported(LIB_NAME) {
-        let coinflags = vec!["CGL".to_string()];
+        let mut coinflags = vec!["CGL".to_string()];
+
+        let (_, coinflags_other) = coinbuilder::get_metadata_from("CoinUtils");
+        coinflags.extend(coinflags_other);
+
+        let (_, coinflags_other) = coinbuilder::get_metadata_from("Osi");
+        coinflags.extend(coinflags_other);
+
+        if cfg!(feature = "with_clp") {
+            let (_, coinflags_other) = coinbuilder::get_metadata_from("Clp");
+            coinflags.extend(coinflags_other);
+        }
+
         coinbuilder::print_metadata(Vec::new(), coinflags);
         return;
     }
