@@ -71,5 +71,5 @@ clp-src = { version = "0.2", default-features = false, optional = true}
 
 
 [build-dependencies]
-cc = { version = "1.0", features = ["parallel"] }
+cc = { version = "1.1", features = ["parallel"] }
 coin-build-tools = "0.2"
