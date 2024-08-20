@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [Unreleased]
+
+## [0.2.8+0.60.9](https://github.com/Maroon502/clp-src/compare/v0.2.7+0.60.8...v0.2.8+0.60.9) - 2024-08-20
+
+### Other
+- Update Cgl from 0.60.8 to 0.60.9
+
 ## [0.2.7+0.60.8](https://github.com/Maroon502/cgl-src/compare/v0.2.6+0.60.8...v0.2.7+0.60.8) - 2024-04-11
 
 ### Fixed
